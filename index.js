@@ -13,13 +13,13 @@ mapboxgl.accessToken = 'pk.eyJ1IjoicnlhbnZhbm1hbmVuIiwiYSI6ImNreTI1MGNiYTBoaGUye
     const sliderValue = document.getElementById('slider-value');
 
     map.on('load', () => {
-        map.addSource('1885 Survey', {
+        map.addSource('1947 Topo', {
             'type': 'raster',
-            'url': 'mapbox://ryanvanmanen.4cc7jog2'
+            'url': 'mapbox://ryanvanmanen.2914k0hj'
         });
         map.addLayer({
-            'id': '1885 Survey',
-            'source': '1885 Survey',
+            'id': '1947 Topo',
+            'source': '1947 Topo',
             'type': 'raster'
         });
 
@@ -28,7 +28,7 @@ mapboxgl.accessToken = 'pk.eyJ1IjoicnlhbnZhbm1hbmVuIiwiYSI6ImNreTI1MGNiYTBoaGUye
             // be another layer name found in your style or a custom layer
             // added on the fly using `addSource`.
             map.setPaintProperty(
-                '1885 Survey',
+                '1947 Topo',
                 'raster-opacity',
                 parseInt(e.target.value, 10) / 100
             );
@@ -49,7 +49,7 @@ mapboxgl.accessToken = 'pk.eyJ1IjoicnlhbnZhbm1hbmVuIiwiYSI6ImNreTI1MGNiYTBoaGUye
                         'type': 'Feature',
                         'properties': {
                             'description':
-                                '<strong>Emigrant Hospital</strong>'
+                                '<strong>Manhattan State Hospital</strong>'
                         },
                       'geometry': {
                             'type': 'Point',
@@ -68,17 +68,7 @@ mapboxgl.accessToken = 'pk.eyJ1IjoicnlhbnZhbm1hbmVuIiwiYSI6ImNreTI1MGNiYTBoaGUye
                             'coordinates': [-73.92756, 40.7861]
                         }
                         },
-                   {
-                        'type': 'Feature',
-                        'properties': {
-                            'description':
-                                '<strong>Reservoir</strong>'
-                        },
-                        'geometry': {
-                            'type': 'Point',
-                            'coordinates': [-73.92635, 40.78979]
-                        }
-                        },
+                 
                   {
                         'type': 'Feature',
                         'properties': {
@@ -90,18 +80,7 @@ mapboxgl.accessToken = 'pk.eyJ1IjoicnlhbnZhbm1hbmVuIiwiYSI6ImNreTI1MGNiYTBoaGUye
                             'coordinates': [-73.93488, 40.7843671]
                         }
                     },
-                   {
-                        'type': 'Feature',
-                        'properties': {
-                            'description':
-                                '<strong>Reservoir</strong>'
-                        },
-                        'geometry': {
-                            'type': 'Point',
-                            'coordinates': [-73.9262, 40.78645]
-                        }
-                        },
-                  
+                
                   {
                         'type': 'Feature',
                         'properties': {
@@ -117,35 +96,14 @@ mapboxgl.accessToken = 'pk.eyJ1IjoicnlhbnZhbm1hbmVuIiwiYSI6ImNreTI1MGNiYTBoaGUye
                         'type': 'Feature',
                         'properties': {
                             'description':
-                                '<strong>House of Refuge</strong>'
+                                '<strong>Downing Stadium</strong>'
                         },
                         'geometry': {
                             'type': 'Point',
-                            'coordinates': [-73.926390, 40.79400]
+                            'coordinates': [-73.9253, 40.79400]
                         }
                     },
-                   {
-                        'type': 'Feature',
-                        'properties': {
-                            'description':
-                                '<strong>Children\'s Hospital</strong>'                       
-                        },
-                        'geometry': {
-                            'type': 'Point',
-                            'coordinates': [-73.925734, 40.79827]
-                        }
-                    },
-                  {
-                        'type': 'Feature',
-                        'properties': {
-                            'description':
-                                '<strong>Hospital Wards</strong>'
-                        },
-                        'geometry': {
-                            'type': 'Point',
-                            'coordinates': [-73.9283, 40.790]
-                        }
-                    },
+                 
                     {
                         'type': 'Feature',
                         'properties': {

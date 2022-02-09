@@ -5,7 +5,7 @@ mapboxgl.accessToken = 'pk.eyJ1IjoicnlhbnZhbm1hbmVuIiwiYSI6ImNreTI1MGNiYTBoaGUye
         style: 'mapbox://styles/ryanvanmanen/ckyq6zlzg84i015kwie0bm79l',
         center: [ -73.926393,
       40.78422],
-        minZoom: 13,
+        minZoom: 13,  
         maxZoom: 25,
         zoom: 12.5
     });

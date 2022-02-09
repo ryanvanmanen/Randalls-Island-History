@@ -4,7 +4,7 @@ mapboxgl.accessToken = 'pk.eyJ1IjoicnlhbnZhbm1hbmVuIiwiYSI6ImNreTI1MGNiYTBoaGUye
         style: 'mapbox://styles/ryanvanmanen/ckyq6zlzg84i015kwie0bm79l',
         center: [ -73.926393,
       40.78422],
-        minZoom: 11.5,
+        minZoom: 12,
         maxZoom: 25,
         zoom: 12.5
     });
@@ -13,13 +13,13 @@ mapboxgl.accessToken = 'pk.eyJ1IjoicnlhbnZhbm1hbmVuIiwiYSI6ImNreTI1MGNiYTBoaGUye
     const sliderValue = document.getElementById('slider-value');
 
     map.on('load', () => {
-        map.addSource('NOAA 1907', {
+        map.addSource('1885 Survey', {
             'type': 'raster',
-            'url': 'mapbox://ryanvanmanen.3c6tcrpm'
+            'url': 'mapbox://ryanvanmanen.4cc7jog2'
         });
         map.addLayer({
-            'id': 'NOAA 1907',
-            'source': 'NOAA 1907',
+            'id': '1885 Survey',
+            'source': '1885 Survey',
             'type': 'raster'
         });
 
@@ -28,7 +28,7 @@ mapboxgl.accessToken = 'pk.eyJ1IjoicnlhbnZhbm1hbmVuIiwiYSI6ImNreTI1MGNiYTBoaGUye
             // be another layer name found in your style or a custom layer
             // added on the fly using `addSource`.
             map.setPaintProperty(
-                'NOAA 1907',
+                '1885 Survey',
                 'raster-opacity',
                 parseInt(e.target.value, 10) / 100
             );
@@ -51,12 +51,24 @@ mapboxgl.accessToken = 'pk.eyJ1IjoicnlhbnZhbm1hbmVuIiwiYSI6ImNreTI1MGNiYTBoaGUye
                             'description':
                                 '<strong>Emigrant Hospital</strong>'
                         },
+                      'geometry': {
+                            'type': 'Point',
+                            'coordinates': [-73.9316, 40.7889]
+                        }
+                        },
+                        
+                  {
+                        'type': 'Feature',
+                        'properties': {
+                            'description':
+                                '<strong>Male Lunatic Asylum</strong>'
+                        },
                         'geometry': {
                             'type': 'Point',
-                            'coordinates': [-73.931228, 40.788997]
+                            'coordinates': [-73.92756, 40.7861]
                         }
-                    },
-                    {
+                        },
+                   {
                         'type': 'Feature',
                         'properties': {
                             'description':
@@ -64,9 +76,32 @@ mapboxgl.accessToken = 'pk.eyJ1IjoicnlhbnZhbm1hbmVuIiwiYSI6ImNreTI1MGNiYTBoaGUye
                         },
                         'geometry': {
                             'type': 'Point',
-                            'coordinates': [-73.92639, 40.78975]
+                            'coordinates': [-73.92635, 40.78979]
                         }
                         },
+                  {
+                        'type': 'Feature',
+                        'properties': {
+                            'description':
+                                '<strong>Idiot Asylum</strong>'
+                        },
+                        'geometry': {
+                            'type': 'Point',
+                            'coordinates': [-73.93488, 40.7843671]
+                        }
+                    },
+                   {
+                        'type': 'Feature',
+                        'properties': {
+                            'description':
+                                '<strong>Reservoir</strong>'
+                        },
+                        'geometry': {
+                            'type': 'Point',
+                            'coordinates': [-73.9262, 40.78645]
+                        }
+                        },
+                  
                   {
                         'type': 'Feature',
                         'properties': {
@@ -100,7 +135,17 @@ mapboxgl.accessToken = 'pk.eyJ1IjoicnlhbnZhbm1hbmVuIiwiYSI6ImNreTI1MGNiYTBoaGUye
                             'coordinates': [-73.925734, 40.79827]
                         }
                     },
-           
+                  {
+                        'type': 'Feature',
+                        'properties': {
+                            'description':
+                                '<strong>Hospital Wards</strong>'
+                        },
+                        'geometry': {
+                            'type': 'Point',
+                            'coordinates': [-73.9283, 40.790]
+                        }
+                    },
                     {
                         'type': 'Feature',
                         'properties': {
@@ -159,4 +204,5 @@ mapboxgl.accessToken = 'pk.eyJ1IjoicnlhbnZhbm1hbmVuIiwiYSI6ImNreTI1MGNiYTBoaGUye
             popup.remove();
         });
     });
+
 

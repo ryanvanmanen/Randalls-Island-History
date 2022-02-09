@@ -1,25 +1,44 @@
-
-	mapboxgl.accessToken = 'pk.eyJ1IjoicnlhbnZhbm1hbmVuIiwiYSI6ImNreTI1MGNiYTBoaGUyeW9kdWFqODBoankifQ.p9v5Sx-GtlttBSWiREPMyQ';
+mapboxgl.accessToken = 'pk.eyJ1IjoicnlhbnZhbm1hbmVuIiwiYSI6ImNreTI1MGNiYTBoaGUyeW9kdWFqODBoankifQ.p9v5Sx-GtlttBSWiREPMyQ';
     const map = new mapboxgl.Map({
-        container: 'map', // container ID
-        style: 'mapbox://styles/ryanvanmanen/ckyq6zlzg84i015kwie0bm79l', // style URL
+        container: 'map',
+        style: 'mapbox://styles/ryanvanmanen/ckyq6zlzg84i015kwie0bm79l',
         center: [ -73.926393,
-      40.78422], // starting position [lng, lat]
-        zoom: 12.5 // starting zoom
+      40.78422],
+        minZoom: 11.5,
+        maxZoom: 25,
+        zoom: 12.5
     });
-map.on('load', () => {
+
+    const slider = document.getElementById('slider');
+    const sliderValue = document.getElementById('slider-value');
+
+    map.on('load', () => {
         map.addSource('NOAA 1907', {
             'type': 'raster',
             'url': 'mapbox://ryanvanmanen.3c6tcrpm'
         });
-
         map.addLayer({
             'id': 'NOAA 1907',
             'source': 'NOAA 1907',
             'type': 'raster'
         });
-    });
 
+        slider.addEventListener('input', (e) => {
+            // Adjust the layers opacity. layer here is arbitrary - this could
+            // be another layer name found in your style or a custom layer
+            // added on the fly using `addSource`.
+            map.setPaintProperty(
+                'NOAA 1907',
+                'raster-opacity',
+                parseInt(e.target.value, 10) / 100
+            );
+
+            // Value indicator
+            sliderValue.textContent = e.target.value + '%';
+        });
+    });
+  
+  
     map.on('load', () => {
         map.addSource('places', {
             'type': 'geojson',
@@ -37,6 +56,17 @@ map.on('load', () => {
                             'coordinates': [-73.931228, 40.788997]
                         }
                     },
+                    {
+                        'type': 'Feature',
+                        'properties': {
+                            'description':
+                                '<strong>Reservoir</strong>'
+                        },
+                        'geometry': {
+                            'type': 'Point',
+                            'coordinates': [-73.92639, 40.78975]
+                        }
+                        },
                   {
                         'type': 'Feature',
                         'properties': {
@@ -129,3 +159,4 @@ map.on('load', () => {
             popup.remove();
         });
     });
+

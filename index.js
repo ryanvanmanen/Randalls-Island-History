@@ -1,4 +1,3 @@
-Javascript.load("https://api.mapbox.com/mapbox.js/v3.3.1/mapbox.js")
 
 mapboxgl.accessToken = 'pk.eyJ1IjoicnlhbnZhbm1hbmVuIiwiYSI6ImNreTI1MGNiYTBoaGUyeW9kdWFqODBoankifQ.p9v5Sx-GtlttBSWiREPMyQ';
     const map = new mapboxgl.Map({

@@ -1,44 +1,25 @@
-mapboxgl.accessToken = 'pk.eyJ1IjoicnlhbnZhbm1hbmVuIiwiYSI6ImNreTI1MGNiYTBoaGUyeW9kdWFqODBoankifQ.p9v5Sx-GtlttBSWiREPMyQ';
+
+	mapboxgl.accessToken = 'pk.eyJ1IjoicnlhbnZhbm1hbmVuIiwiYSI6ImNreTI1MGNiYTBoaGUyeW9kdWFqODBoankifQ.p9v5Sx-GtlttBSWiREPMyQ';
     const map = new mapboxgl.Map({
-        container: 'map',
-        style: 'mapbox://styles/ryanvanmanen/ckyq6zlzg84i015kwie0bm79l',
+        container: 'map', // container ID
+        style: 'mapbox://styles/ryanvanmanen/ckyq6zlzg84i015kwie0bm79l', // style URL
         center: [ -73.926393,
-      40.78422],
-        minZoom: 12,
-        maxZoom: 25,
-        zoom: 12.5
+      40.78422], // starting position [lng, lat]
+        zoom: 12.5 // starting zoom
     });
-
-    const slider = document.getElementById('slider');
-    const sliderValue = document.getElementById('slider-value');
-
-    map.on('load', () => {
-        map.addSource('1947 Topo', {
+map.on('load', () => {
+        map.addSource('NOAA 1907', {
             'type': 'raster',
-            'url': 'mapbox://ryanvanmanen.2914k0hj'
+            'url': 'mapbox://ryanvanmanen.3c6tcrpm'
         });
+
         map.addLayer({
-            'id': '1947 Topo',
-            'source': '1947 Topo',
+            'id': 'NOAA 1907',
+            'source': 'NOAA 1907',
             'type': 'raster'
         });
-
-        slider.addEventListener('input', (e) => {
-            // Adjust the layers opacity. layer here is arbitrary - this could
-            // be another layer name found in your style or a custom layer
-            // added on the fly using `addSource`.
-            map.setPaintProperty(
-                '1947 Topo',
-                'raster-opacity',
-                parseInt(e.target.value, 10) / 100
-            );
-
-            // Value indicator
-            sliderValue.textContent = e.target.value + '%';
-        });
     });
-  
-  
+
     map.on('load', () => {
         map.addSource('places', {
             'type': 'geojson',
@@ -49,38 +30,13 @@ mapboxgl.accessToken = 'pk.eyJ1IjoicnlhbnZhbm1hbmVuIiwiYSI6ImNreTI1MGNiYTBoaGUye
                         'type': 'Feature',
                         'properties': {
                             'description':
-                                '<strong>Manhattan State Hospital</strong>'
-                        },
-                      'geometry': {
-                            'type': 'Point',
-                            'coordinates': [-73.9316, 40.7889]
-                        }
-                        },
-                        
-                  {
-                        'type': 'Feature',
-                        'properties': {
-                            'description':
-                                '<strong>Male Lunatic Asylum</strong>'
+                                '<strong>Emigrant Hospital</strong>'
                         },
                         'geometry': {
                             'type': 'Point',
-                            'coordinates': [-73.92756, 40.7861]
-                        }
-                        },
-                 
-                  {
-                        'type': 'Feature',
-                        'properties': {
-                            'description':
-                                '<strong>Idiot Asylum</strong>'
-                        },
-                        'geometry': {
-                            'type': 'Point',
-                            'coordinates': [-73.93488, 40.7843671]
+                            'coordinates': [-73.931228, 40.788997]
                         }
                     },
-                
                   {
                         'type': 'Feature',
                         'properties': {
@@ -96,14 +52,25 @@ mapboxgl.accessToken = 'pk.eyJ1IjoicnlhbnZhbm1hbmVuIiwiYSI6ImNreTI1MGNiYTBoaGUye
                         'type': 'Feature',
                         'properties': {
                             'description':
-                                '<strong>Downing Stadium</strong>'
+                                '<strong>House of Refuge</strong>'
                         },
                         'geometry': {
                             'type': 'Point',
-                            'coordinates': [-73.9253, 40.79400]
+                            'coordinates': [-73.926390, 40.79400]
                         }
                     },
-                 
+                   {
+                        'type': 'Feature',
+                        'properties': {
+                            'description':
+                                '<strong>Children\'s Hospital</strong>'                       
+                        },
+                        'geometry': {
+                            'type': 'Point',
+                            'coordinates': [-73.925734, 40.79827]
+                        }
+                    },
+           
                     {
                         'type': 'Feature',
                         'properties': {
@@ -162,5 +129,3 @@ mapboxgl.accessToken = 'pk.eyJ1IjoicnlhbnZhbm1hbmVuIiwiYSI6ImNreTI1MGNiYTBoaGUye
             popup.remove();
         });
     });
-
-

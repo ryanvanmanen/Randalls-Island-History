@@ -15,7 +15,7 @@ mapboxgl.accessToken = 'pk.eyJ1IjoicnlhbnZhbm1hbmVuIiwiYSI6ImNreTI1MGNiYTBoaGUye
     map.on('load', () => {
         map.addSource('NOAA 1907', {
             'type': 'raster',
-            'url': 'mapbox://ryanvanmanen.3c6tcrpm' 
+            'url': 'mapbox://ryanvanmanen.4cc7jog2' 
         });
         map.addLayer({
             'id': 'NOAA 1907',

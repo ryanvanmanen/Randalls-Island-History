@@ -1,2 +1,2 @@
-# ryanvanmanen.github.io-randalls
+# ryanvanmanen.github.io
 Interactive georeferenced historical maps

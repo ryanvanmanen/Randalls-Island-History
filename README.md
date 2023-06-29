@@ -1,2 +1,2 @@
-# ryanvanmanen.github.io/randalls
+# Randall's Island History
 Interactive georeferenced historical maps
